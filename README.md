@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Perfect Forms Studio Winterthur 🚀
 
-# Run and deploy your AI Studio app
+This is the finalized, high-performance **Vanilla HTML/CSS** version of the Perfect Forms website. All unnecessary React/TS/Vite overhead has been removed to ensure maximum speed and simple editing.
 
-This contains everything you need to run your app locally.
+## 🛠 Project Structure
+- `index.html`: The main homepage.
+- `das-studio.html`, `sun400xl.html`, `preise.html`, `kontakt.html`: Individual sub-pages.
+- `style.css`: The central design and layout engine.
+- `Images/`: All optimized photographic and icon assets.
+- `DESIGN.md`: The official design system tokens (colors, fonts, radii).
 
-View your app in AI Studio: https://ai.studio/apps/9bac0c9c-8d31-4667-9bf9-3780c76c0255
+## 💻 Local Real-Time Editing
+To edit the website and see changes instantly on your Mac:
+1. Open any of the `.html` or `.css` files in your text editor.
+2. To preview locally, run:
+   ```bash
+   npm start
+   ```
+   (This runs a mini-server at `http://localhost:5000`)
 
-## Run Locally
+## 🌐 How to Update the Live Website
+Once you're happy with your local changes, push them to your GitHub:
+1. Run:
+   ```bash
+   git add .
+   git commit -m "Describe your update"
+   git push origin main
+   ```
+2. (Optional) To force-deploy a new version to GitHub Pages:
+   ```bash
+   npm run deploy
+   ```
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🎨 Design System
+All colors, spacing, and component rules are strictly defined in [DESIGN.md](./DESIGN.md). Always follow these tokens for consistency.
