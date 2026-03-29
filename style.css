@@ -427,15 +427,17 @@ button {
 }
 
 .page-title {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
+  font-size: 2.75rem;
+  margin-bottom: 1.5rem;
   color: var(--color-text-primary);
   font-family: var(--font-display);
   font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
 }
 
 .page-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--color-text-secondary);
   max-width: 600px;
   margin: 0 auto;
@@ -443,7 +445,10 @@ button {
 
 @media(min-width: 768px) {
   .page-title {
-    font-size: 3rem;
+    font-size: 4.5rem;
+  }
+  .page-subtitle {
+    font-size: 1.25rem;
   }
 }
 
@@ -480,15 +485,17 @@ button {
 }
 
 .section-title {
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+  letter-spacing: -0.02em;
 }
 
 @media (min-width: 768px) {
   .section-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 
