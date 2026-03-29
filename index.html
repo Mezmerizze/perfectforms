@@ -1,14 +1,713 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-    <script type="module" crossorigin src="/perfectforms/assets/index-BCCHLnfY.js"></script>
-    <link rel="stylesheet" crossorigin href="/perfectforms/assets/index-BwGWfn0T.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="de">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfect Forms - Studio Winterthur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-title">Perfect Forms</span>
+        <span class="logo-subtitle">Studio Winterthur</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="active">Startseite</a>
+        <a href="preise.html">Anmeldung & Preise</a>
+        <a href="sun400xl.html">Das SUN 400 XL</a>
+        <a href="das-studio.html">Das Studio</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="kontakt.html" class="btn-primary">Probetraining buchen</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <!-- Menu Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu">
+          <line x1="4" x2="20" y1="12" y2="12" />
+          <line x1="4" x2="20" y1="6" y2="6" />
+          <line x1="4" x2="20" y1="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="active">Startseite</a>
+      <a href="preise.html">Anmeldung & Preise</a>
+      <a href="sun400xl.html">Das SUN 400 XL</a>
+      <a href="das-studio.html">Das Studio</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html" class="mobile-cta">Probetraining buchen</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="../Images/kling_20260226_作品__1537_0.webp" alt="Woman in white fitness wear" />
+        <div class="hero-bg-overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-text-wrapper">
+          <span class="hero-badge reveal-up delay-100">Ihr persönliches Figurstudio</span>
+          <h1 class="hero-title reveal-up delay-200">
+            <span class="text-primary">Abnehmen</span> ohne Hungern. <br />
+            Ohne <span class="text-primary">Jo-Jo Effekt.</span>
+          </h1>
+          <p class="hero-subtitle reveal-up delay-300">
+            Figurmodellierung mit Abnehmen, Hautstraffung und Muskelaufbau in Winterthur. Infrarot in Verbindung mit
+            Bewegung.
+          </p>
+          <div class="hero-buttons reveal-up delay-400">
+            <a href="kontakt.html" class="btn-primary">Probetraining Fr 30.-</a>
+            <a href="sun400xl.html" class="btn-outline">Mehr erfahren &rarr;</a>
+          </div>
+
+          <div class="hero-trust reveal-up delay-500">
+            <div class="trust-users">
+              <div class="trust-avatars">
+                <div class="trust-avatar"><img src="https://picsum.photos/seed/avatar1/100/100" alt="User 1" /></div>
+                <div class="trust-avatar"><img src="https://picsum.photos/seed/avatar2/100/100" alt="User 2" /></div>
+                <div class="trust-avatar"><img src="https://picsum.photos/seed/avatar3/100/100" alt="User 3" /></div>
+              </div>
+              <span style="font-weight: 500; font-size: 0.875rem; color:#334155;">500+ Glückliche Kunden</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div style="font-weight: 500; font-size: 0.875rem;">
+              <span class="text-primary">★ 4.9</span>
+              <span>Bewertung</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits-section" id="vorteile">
+      <div class="container benefits-grid">
+        <div class="benefits-text reveal-left">
+          <span class="section-label">Vorteile</span>
+          <h2 class="section-title">Sichtbare Resultate <br /> <span class="text-primary">garantiert</span></h2>
+          <p class="section-desc">Durch die einzigartige Kombination von Bewegung und Infrarotwärme erreichen Sie Ihre
+            Ziele schneller und effektiver als bei herkömmlichem Training.</p>
+          <a href="kontakt.html" class="btn-primary">Jetzt starten &rarr;</a>
+        </div>
+
+        <div class="benefits-cards">
+          <!-- Card 1 -->
+          <div class="benefit-card reveal-up delay-100">
+            <div class="benefit-icon">
+              <!-- Ruler Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21.3 15.3l-14-14a2 2 0 0 0-2.8 0l-2.8 2.8a2 2 0 0 0 0 2.8l14 14a2 2 0 0 0 2.8 0l2.8-2.8a2 2 0 0 0 0-2.8z" />
+                <path d="M14.5 12.5l2 2" />
+                <path d="M10.5 8.5l2 2" />
+                <path d="M6.5 4.5l2 2" />
+              </svg>
+            </div>
+            <h3>Umfangreduzierung</h3>
+            <p>Gezielte Abnahme an Problemzonen wie Bauch, Beine und Po.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="benefit-card reveal-up delay-200">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z" />
+                <path d="m20 4-1 3-3 1 3 1 1 3 1-3 3-1-3-1Z" />
+              </svg>
+            </div>
+            <h3>Straffe Haut</h3>
+            <p>Verbessertes Hautbild und Rückbildung von Cellulite.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="benefit-card reveal-up delay-300">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m6.5 6.5 11 11" />
+                <path d="m21 21-1-1v-3l-3-3-3 3v3l-1 1" />
+                <path d="m3 3 1 1v3l3 3 3-3V4L9 3" />
+                <path d="m14 10 3-3" />
+                <path d="m10 14-3 3" />
+              </svg>
+            </div>
+            <h3>Muskelaufbau</h3>
+            <p>Effektive Stärkung der Muskulatur durch Widerstand.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="benefit-card reveal-up delay-400">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <h3>Stoffwechsel</h3>
+            <p>Nachhaltige Aktivierung der Fettverbrennung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSFORMATION -->
+    <section class="transform-section">
+      <div class="container transform-grid">
+        <div class="transform-text">
+          <h2 class="section-title reveal-up">
+            Transformieren Sie <br />
+            <span style="color: rgba(16,185,129,0.8)">Körper, Geist</span> <br />
+            und <span style="color: rgba(16,185,129,0.8)">Leben.</span>
+          </h2>
+          <p class="section-desc reveal-up delay-100">Egal, ob Sie Ihre Gesundheit verbessern, Stress abbauen oder Ihr
+            Wohlbefinden steigern möchten – das Training im SUN 400 XL bietet eine Fülle von Vorteilen, die Ihren Alltag
+            positiv verändern.</p>
+          <a href="das-studio.html" class="btn-primary reveal-up delay-200">Das Studio entdecken &rarr;</a>
+        </div>
+
+        <div class="marquee-container reveal-scale-lg">
+          <div class="marquee-gradient-top"></div>
+          <div class="marquee-gradient-bottom"></div>
+          <div class="marquee-content">
+            <!-- Set 1 -->
+            <div class="marquee-card">
+              <div class="marquee-card-header">
+                <h3>Ganzheitliches Wohlbefinden</h3>
+                <div class="marquee-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.6;">Fördert ein gesundes Herz, verbessert die
+                Durchblutung und unterstützt einen besseren Schlaf. Es kann auch den Blutdruck senken.</p>
+            </div>
+            <div class="marquee-card">
+              <div class="marquee-card-header">
+                <h3>Innere Ruhe finden</h3>
+                <div class="marquee-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.6;">Die Kombination aus Wärme und Bewegung
+                hilft, Stress, Ängste und mentale Anspannung abzubauen. Finden Sie zurück zu Ihrer Mitte.</p>
+            </div>
+            <div class="marquee-card">
+              <div class="marquee-card-header">
+                <h3>Energie & Vitalität</h3>
+                <div class="marquee-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.6;">Spüren Sie neue Energie durch die
+                Anregung des Stoffwechsels. Fühlen Sie sich vitaler und leistungsfähiger im Alltag.</p>
+            </div>
+            <div class="marquee-card">
+              <div class="marquee-card-header">
+                <h3>Schmerzfreiheit</h3>
+                <div class="marquee-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.6;">Linderung von chronischen Schmerzen und
+                Verspannungen. Genießen Sie wieder mehr Bewegungsfreiheit ohne Beschwerden.</p>
+            </div>
+
+            <!-- Set 2 (for loop) -->
+            <div class="marquee-card">
+              <div class="marquee-card-header">
+                <h3>Ganzheitliches Wohlbefinden</h3>
+                <div class="marquee-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.6;">Fördert ein gesundes Herz, verbessert die
+                Durchblutung und unterstützt einen besseren Schlaf. Es kann auch den Blutdruck senken.</p>
+            </div>
+            <div class="marquee-card">
+              <div class="marquee-card-header">
+                <h3>Innere Ruhe finden</h3>
+                <div class="marquee-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.6;">Die Kombination aus Wärme und Bewegung
+                hilft, Stress, Ängste und mentale Anspannung abzubauen. Finden Sie zurück zu Ihrer Mitte.</p>
+            </div>
+            <div class="marquee-card">
+              <div class="marquee-card-header">
+                <h3>Energie & Vitalität</h3>
+                <div class="marquee-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.6;">Spüren Sie neue Energie durch die
+                Anregung des Stoffwechsels. Fühlen Sie sich vitaler und leistungsfähiger im Alltag.</p>
+            </div>
+            <div class="marquee-card">
+              <div class="marquee-card-header">
+                <h3>Schmerzfreiheit</h3>
+                <div class="marquee-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </div>
+              </div>
+              <p style="color: var(--color-text-secondary); line-height: 1.6;">Linderung von chronischen Schmerzen und
+                Verspannungen. Genießen Sie wieder mehr Bewegungsfreiheit ohne Beschwerden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WELLNESS -->
+    <section class="wellness-section" id="wellness">
+      <div class="container transform-grid">
+        <div class="wellness-img reveal-left order-md-2">
+          <img src="../Images/asd.jpg" alt="Wellness and relaxation" />
+        </div>
+        <div class="wellness-text reveal-right">
+          <h2 class="section-title">Ganzheitliche Entspannung</h2>
+          <ul class="wellness-list">
+            <li class="wellness-item">
+              <div class="wellness-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <span>Tiefenentspannung für Körper und Geist.</span>
+            </li>
+            <li class="wellness-item">
+              <div class="wellness-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <span>Reduktion von Stresshormonen.</span>
+            </li>
+            <li class="wellness-item">
+              <div class="wellness-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <span>Verbesserung der Schlafqualität.</span>
+            </li>
+            <li class="wellness-item">
+              <div class="wellness-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <span>Lösung von mentalen Blockaden.</span>
+            </li>
+            <li class="wellness-item">
+              <div class="wellness-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></div>
+              <span>Steigerung des allgemeinen Wohlbefindens.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section" id="preise">
+      <div class="container text-center reveal-up">
+        <span class="section-label">Preise</span>
+        <h2 class="section-title">Investieren Sie in Ihre Gesundheit</h2>
+        <p class="section-desc" style="margin: 0 auto 3rem auto;">Flexible Modelle für jeden Bedarf. Starten Sie mit
+          einem unverbindlichen Probetraining.</p>
+
+        <div class="pricing-grid">
+          <!-- Card 1 -->
+          <div class="pricing-card reveal-up delay-100">
+            <h3 class="price-title">10er Abo</h3>
+            <div class="price-amount">CHF 490</div>
+            <p class="price-desc">Für den Einstieg</p>
+            <a href="kontakt.html" class="btn-outline"
+              style="width: 100%; max-width: 200px; margin-bottom: 2rem;">Anfragen</a>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li>+ 1 Training Gratis</li>
+              <li>Gültigkeit 6 Monate</li>
+              <li>10% Studentenrabatt</li>
+            </ul>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="pricing-card-bestseller reveal-up delay-200">
+            <div class="badge-bestseller">Empfohlen</div>
+            <h3 class="price-title">15er Abo</h3>
+            <div class="price-amount">CHF 735</div>
+            <p class="price-desc">Der Bestseller</p>
+            <a href="kontakt.html" class="btn-primary"
+              style="width: 100%; max-width: 220px; margin-bottom: 2.5rem; background: var(--color-primary); color: white; border:none;">Anfragen
+            </a>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li class="highlight">+ 3 Trainings Gratis</li>
+              <li>Gültigkeit 9 Monate</li>
+              <li>10% Studentenrabatt</li>
+            </ul>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="pricing-card reveal-up delay-300">
+            <h3 class="price-title">20er Abo</h3>
+            <div class="price-amount">CHF 980</div>
+            <p class="price-desc">Maximaler Profit</p>
+
+            <a href="kontakt.html" class="btn-outline"
+              style="width: 100%; max-width: 200px; margin-bottom: 2rem;">Anfragen</a>
+            <div class="pricing-divider"></div>
+            <ul class="pricing-features">
+              <li>+ 5 Trainings Gratis</li>
+              <li>Gültigkeit 1 Jahr</li>
+              <li>10% Studentenrabatt</li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="preise.html" class="btn-outline reveal-up delay-400">Weitere Angebote & Infos &rarr;</a>
+      </div>
+    </section>
+
+    <!-- INFO BOX -->
+    <section class="info-section">
+      <div class="container">
+        <div class="info-box reveal-up">
+          <div class="info-content">
+            <div class="info-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              <span>Wissenswertes</span>
+            </div>
+            <h2 class="section-title" style="margin-bottom: 0;">Pflegen Sie Ihr wertvollstes Gut</h2>
+            <p style="color: var(--color-text-secondary); line-height: 1.6;">Erfahren Sie alles über die therapeutische
+              Wirkung der Infrarotstrahlung, die Tiefenwirkung im Gewebe und wie der Perfect Forms SUN 400 XL Ihren
+              Körper bei der Entgiftung und Regeneration unterstützt.</p>
+            <div style="padding-top: 0.5rem;">
+              <a href="#" class="btn-primary" style="background:#0F172A;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                  <polyline points="14 2 14 8 20 8" />
+                </svg>
+                Broschüre herunterladen <span style="font-weight: 400; font-size: 0.75rem; color:#94A3B8;">(PDF)</span>
+              </a>
+            </div>
+          </div>
+          <div class="info-illustration"
+            style="perspective: 1000px; display: flex; justify-content: center; align-items: center;">
+            <div class="brochure-card"
+              style="width: 16rem; aspect-ratio: 1 / 1.4; border-radius: 0.5rem; overflow: hidden; box-shadow: 20px 25px 50px -12px rgba(0,0,0,0.25), -5px -5px 20px rgba(255,255,255,0.8); position: relative; border: 1px solid rgba(255,255,255,0.8); background: white; transform-style: preserve-3d; transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+
+              <!-- Realistic Book Spine -->
+              <div
+                style="position: absolute; left: 0; top: 0; bottom: 0; width: 1.25rem; background: linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 30%, transparent 100%); z-index: 10;">
+              </div>
+
+              <!-- Cover Image -->
+              <div
+                style="height: 55%; width: 100%; background-image: url('../Images/sun-400-xl-frontansicht.jpg'); background-size: cover; background-position: center; position: relative;">
+                <div
+                  style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4) 100%);">
+                </div>
+              </div>
+
+              <!-- Content Half -->
+              <div style="height: 45%; padding: 1.5rem 1.25rem; position: relative; background: var(--color-bg-card);">
+
+                <!-- Floating Download Icon -->
+                <div
+                  style="position: absolute; top: -1.25rem; right: 1.25rem; width: 2.5rem; height: 2.5rem; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px -1px var(--color-primary-glow), 0 2px 4px -1px rgba(0,0,0,0.06);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                </div>
+
+                <div
+                  style="font-size: 0.65rem; color: var(--color-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+                  Offizielle Broschüre</div>
+                <h3
+                  style="font-family: var(--font-display); font-size: 1.25rem; color: var(--color-text-primary); margin-bottom: 0.25rem; line-height: 1.2;">
+                  Perfect Forms</h3>
+                <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 1rem;">SUN 400 XL Guide
+                </p>
+                <div style="width: 2rem; height: 3px; background: var(--color-primary); border-radius: 2px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <div class="container faq-container reveal-up">
+        <div class="text-center" style="margin-bottom: 4rem;">
+          <h2 class="section-title" style="margin-bottom: 1rem;">Häufig gestellte Fragen</h2>
+          <p class="section-desc" style="margin: 0 auto;">Antworten auf die wichtigsten Fragen rund um das
+            Infrarot-Training.</p>
+        </div>
+
+        <div class="faq-list">
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button class="faq-button">
+              <span>Kann ich mit Implantaten oder künstlichen Gelenken trainieren?</span>
+              <div class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14" />
+                  <path class="v-line" d="M12 5v14" />
+                </svg></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Normalerweise besteht keine Gefahr, da Implantate und künstliche Gelenke tiefer im Körper liegen als die
+                Infrarotstrahlung eindringt (ca. 5mm). Dennoch sollte im Zweifelsfall immer der behandelnde Arzt
+                konsultiert werden.
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button class="faq-button">
+              <span>Was genau ist Infrarotstrahlung?</span>
+              <div class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14" />
+                  <path class="v-line" d="M12 5v14" />
+                </svg></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Infrarotstrahlung ist eine sichere Form natürlich vorkommender Energie, die Objekte durch direkte
+                Lichtumwandlung erwärmt. Sie dringt bis zu 5mm in den Körper ein und hat zahlreiche positive Effekte auf
+                Haut, Körper und Fettzellen.
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button class="faq-button">
+              <span>Wann sollte ich auf das Training verzichten?</span>
+              <div class="faq-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14" />
+                  <path class="v-line" d="M12 5v14" />
+                </svg></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Bei akuten Entzündungen, Fieber, Grippe, frischen Verletzungen, Blutungen oder oberflächlichen
+                Venenentzündungen sollte 'Hände weg von Wärme' gelten. Pausieren Sie das Training, bis Sie wieder fit
+                sind.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FOOTER -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title reveal-up">Bereit für Ihr Probetraining?</h2>
+        <p class="reveal-up delay-100" style="color: #94A3B8; font-size: 1.125rem; margin-bottom: 2rem;">
+          Nur Fr 30.- (werden zurückerstattet nach Kauf von Abo innerhalb von 10 Tagen). <br />
+          Studenten Rabatt: 10%.
+        </p>
+        <a href="kontakt.html" class="btn-primary reveal-scale delay-200"
+          style="padding: 1rem 2rem; font-size: 1.125rem;">Jetzt Termin vereinbaren &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">
+          <span class="logo-title">Perfect Forms</span>
+          <span class="logo-subtitle">Studio Winterthur</span>
+        </div>
+        <p style="color: var(--color-text-secondary); font-size: 0.875rem; margin-top: 1rem; line-height: 1.6;">
+          Ihr Partner für Figurmodellierung, Gesundheit und Wohlbefinden in Winterthur.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Links</h3>
+        <div class="footer-links">
+          <a href="index.html">Startseite</a>
+          <a href="preise.html">Anmeldung & Preise</a>
+          <a href="sun400xl.html">Das SUN 400 XL</a>
+          <a href="das-studio.html">Das Studio</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Kontakt</h3>
+        <div class="footer-contact">
+          <a href="tel:0763833318" class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>076 383 33 18</span>
+          </a>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <div>
+              <p>Mo-Fr | 13-20 Uhr</p>
+              <p style="color: var(--color-text-tertiary); font-size: 0.75rem; margin-top: 0.25rem;">Termine nach
+                Vereinbarung auch nach 18 Uhr und am Wochenende.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      &copy; 2026 Perfect Forms Studio Winterthur. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const icon = mobileMenuBtn.querySelector('svg');
+      if (mobileMenu.classList.contains('open')) {
+        // Change to X icon
+        icon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+      } else {
+        // Change back to Menu icon
+        icon.innerHTML = '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>';
+      }
+    });
+
+    // FAQ Accordion
+    const faqButtons = document.querySelectorAll('.faq-button');
+    faqButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const icon = btn.querySelector('.v-line');
+        const isOpen = item.classList.contains('active');
+
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.faq-answer').style.height = '0px';
+          otherItem.querySelector('.v-line').style.display = 'block';
+        });
+
+        // Toggle touched
+        if (!isOpen) {
+          item.classList.add('active');
+          answer.style.height = answer.scrollHeight + 'px';
+          icon.style.display = 'none';
+        }
+      });
+    });
+
+    // Intersection Observer for micro-animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-scale-lg').forEach(el => observer.observe(el));
+
+    // Marquee Acceleration on Hover
+    const marqueeContent = document.querySelector('.marquee-content');
+    if (marqueeContent) {
+      // Small timeout to ensure the CSS animation has initialized before parsing getAnimations()
+      setTimeout(() => {
+        const animations = marqueeContent.getAnimations();
+        if (animations.length > 0) {
+          const marqueeAnim = animations[0];
+          const container = document.querySelector('.marquee-container');
+
+          container.addEventListener('mouseenter', () => {
+            marqueeAnim.playbackRate = 2.5; // Speed up
+          });
+
+          container.addEventListener('mouseleave', () => {
+            marqueeAnim.playbackRate = 1; // Return to normal speed
+          });
+        }
+      }, 100);
+    }
+  </script>
+</body>
+
+</html>

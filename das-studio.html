@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Das Studio - Perfect Forms</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .studio-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-img {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 4 / 3;
+      position: relative;
+    }
+
+    .gallery-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .gallery-img:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      padding: 1.5rem;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .gallery-img:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay-text {
+      color: white;
+      font-size: 1.125rem;
+      font-weight: 500;
+      transform: translateY(15px);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .gallery-img:hover .gallery-overlay-text {
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      .large-gallery-img {
+        grid-column: 1 / -1;
+        aspect-ratio: 21 / 9;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-title">Perfect Forms</span>
+        <span class="logo-subtitle">Studio Winterthur</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Startseite</a>
+        <a href="preise.html">Anmeldung & Preise</a>
+        <a href="sun400xl.html">Das SUN 400 XL</a>
+        <a href="das-studio.html" class="active">Das Studio</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="kontakt.html" class="btn-primary">Probetraining buchen</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu">
+          <line x1="4" x2="20" y1="12" y2="12" />
+          <line x1="4" x2="20" y1="6" y2="6" />
+          <line x1="4" x2="20" y1="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Startseite</a>
+      <a href="preise.html">Anmeldung & Preise</a>
+      <a href="sun400xl.html">Das SUN 400 XL</a>
+      <a href="das-studio.html" class="active">Das Studio</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html" class="mobile-cta">Probetraining buchen</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero reveal-up">
+      <h1 class="page-title">Das Studio</span></h1>
+      <p class="page-subtitle">Ihre Wohlfühloase für Fitness, Wellness & Beauty.</p>
+    </section>
+
+    <section class="container" style="max-width: 1000px; margin-bottom: 5rem;">
+      <div class="reveal-up delay-100"
+        style="background-color: white; border: 1px solid #F1F5F9; border-radius: 1.5rem; padding: 3rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);">
+
+        <p
+          style="font-size: 1.25rem; color: var(--color-text-primary); font-weight: 500; line-height: 1.7; margin-bottom: 3rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+          Kaum Zeit für Sport und Wellness? Sie möchten aber trotzdem fit und schlank sein und dazu gut aussehen? Dann
+          herzlich willkommen im „Perfect Forms“ Studio!
+        </p>
+
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+
+          <div class="benefit-card reveal-up delay-100"
+            style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem 1.5rem; background-color: var(--color-bg-elevated); transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+            <div class="benefit-icon"
+              style="margin-bottom: 1rem; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" viewBox="0 0 24 24">
+                <path
+                  d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z">
+                </path>
+              </svg>
+            </div>
+            <div>
+              <h3
+                style="font-size: 1.25rem; font-family: var(--font-display); color: var(--color-text-primary); margin-bottom: 1rem;">
+                Persönliche Betreuung</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: 0.9375rem;">
+                <strong>Jeanna Gloor</strong>, unsere Inhaberin, begleitet Sie während des gesamten Trainings in unserer
+                Wohlfühlatmosphäre!</p>
+            </div>
+          </div>
+
+          <div class="benefit-card reveal-up delay-200"
+            style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem 1.5rem; background-color: var(--color-bg-elevated); transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+            <div class="benefit-icon"
+              style="margin-bottom: 1rem; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </div>
+            <div>
+              <h3
+                style="font-size: 1.25rem; font-family: var(--font-display); color: var(--color-text-primary); margin-bottom: 1rem;">
+                Entertainment & Relax</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: 0.9375rem;">Genießen
+                Sie während den 30 Minuten am SUN 400XL Entspannungsvideos! Für Begleitpersonen haben wir eine
+                gemütliche Relax-Ecke.</p>
+            </div>
+          </div>
+
+          <div class="benefit-card reveal-up delay-300"
+            style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem 1.5rem; background-color: var(--color-bg-elevated); transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
+            <div class="benefit-icon"
+              style="margin-bottom: 1rem; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4l3 3" />
+              </svg>
+            </div>
+            <div>
+              <h3
+                style="font-size: 1.25rem; font-family: var(--font-display); color: var(--color-text-primary); margin-bottom: 1rem;">
+                Modernste Ausstattung</h3>
+              <p style="color: var(--color-text-secondary); line-height: 1.6; margin: 0; font-size: 0.9375rem;">
+                Getrennte Duschkabinen, Spinde für Ihre Wertsachen sowie Relaxliegen zum Nachschwitzen stehen für Sie
+                bereit.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="reveal-up delay-400"
+          style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #F1F5F9;">
+          <p
+            style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--color-primary); font-style: italic;">
+            Machen Sie sich schön, bevor Sie das Studio verlassen! Unser toller Schminktisch und Haarfön stehen bereit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="container" style="margin-bottom: 6rem;">
+      <h2 class="section-title text-center" style="font-size: 2rem; margin-bottom: 3rem; text-align: center;">
+        Impressionen</h2>
+      <div class="studio-gallery reveal-up delay-200">
+        <div class="gallery-img large-gallery-img">
+          <img src="../Images/7.png" alt="Entspannte Atmosphäre im Studio">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-text" style="font-size: 1.5rem; max-width: 800px;">Bei uns ist die Stimmung so
+              entspannt, dass die Zeit beim Training einfach verfliegt.</span>
+          </div>
+        </div>
+        <div class="gallery-img">
+          <img src="../Images/1.jpg" alt="Umkleideraum mit Spinden">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-text">Sichere, verschliessbare Spinde für Ihre Wertsachen.</span>
+          </div>
+        </div>
+        <div class="gallery-img">
+          <img src="../Images/2.jpg" alt="Wartebereich für Begleitpersonen">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-text">Entspannter Wartebereich für Begleitpersonen.</span>
+          </div>
+        </div>
+        <div class="gallery-img">
+          <img src="../Images/3.jpg" alt="Großzügiger Ruhebereich">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-text">Unser grosszügiger Ruhebereich mit bequemen Liegen, frischen Pflanzen und
+              stilvoller Deko ist der ideale Ort, um nach dem Workout runterzufahren und neue Kraft zu tanken.</span>
+          </div>
+        </div>
+        <div class="gallery-img">
+          <img src="../Images/4.jpg" alt="Training am SUN 400XL">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-text">Beim Training auf dem SUN 400XL können Sie sich entspannende Videos
+              ansehen. So vergehen die 30 Minuten wie im Flug.</span>
+          </div>
+        </div>
+        <div class="gallery-img">
+          <img src="../Images/5.jpg" alt="Schminktisch und Spiegel">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-text">Nach der Dusche warten Föhn und Spiegel auf Sie. So starten Sie wieder
+              frisch in den restlichen Tag.</span>
+          </div>
+        </div>
+        <div class="gallery-img">
+          <img src="../Images/6.jpg" alt="Relaxliegen zur Regeneration">
+          <div class="gallery-overlay">
+            <span class="gallery-overlay-text">Der perfekte Ort, um nach dem Training runterzufahren und in Ruhe zu
+              regenerieren.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">
+          <span class="logo-title">Perfect Forms</span>
+          <span class="logo-subtitle">Studio Winterthur</span>
+        </div>
+        <p style="color: var(--color-text-secondary); font-size: 0.875rem; margin-top: 1rem; line-height: 1.6;">
+          Ihr Partner für Figurmodellierung, Gesundheit und Wohlbefinden in Winterthur.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Links</h3>
+        <div class="footer-links">
+          <a href="index.html">Startseite</a>
+          <a href="preise.html">Anmeldung & Preise</a>
+          <a href="sun400xl.html">Das SUN 400 XL</a>
+          <a href="das-studio.html">Das Studio</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Kontakt</h3>
+        <div class="footer-contact">
+          <a href="tel:0763833318" class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>076 383 33 18</span>
+          </a>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <div>
+              <p>Mo-Fr | 13-20 Uhr</p>
+              <p style="color: var(--color-text-tertiary); font-size: 0.75rem; margin-top: 0.25rem;">Termine nach
+                Vereinbarung auch nach 18 Uhr und am Wochenende.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      &copy; 2026 Perfect Forms Studio Winterthur. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+  <script>
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-scale-lg').forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>

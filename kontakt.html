@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt - Perfect Forms</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 4rem auto 6rem auto;
+      padding: 0 1rem;
+    }
+
+    @media(min-width:1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+      }
+    }
+
+    .contact-icon-box {
+      background: white;
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid #F1F5F9;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-item-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .form-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      border: 1px solid #F1F5F9;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid #E2E8F0;
+      outline: none;
+      background: #F8FAFC;
+      font-family: inherit;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .input-field:focus {
+      border-color: var(--color-primary);
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .map-box {
+      background: #E2E8F0;
+      height: 250px;
+      border-radius: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-title">Perfect Forms</span>
+        <span class="logo-subtitle">Studio Winterthur</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Startseite</a>
+        <a href="preise.html">Anmeldung & Preise</a>
+        <a href="sun400xl.html">Das SUN 400 XL</a>
+        <a href="das-studio.html">Das Studio</a>
+        <a href="kontakt.html" class="active">Kontakt</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="kontakt.html" class="btn-primary">Probetraining buchen</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+        <!-- Menu Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-menu">
+          <line x1="4" x2="20" y1="12" y2="12" />
+          <line x1="4" x2="20" y1="6" y2="6" />
+          <line x1="4" x2="20" y1="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Startseite</a>
+      <a href="preise.html">Anmeldung & Preise</a>
+      <a href="sun400xl.html">Das SUN 400 XL</a>
+      <a href="das-studio.html">Das Studio</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+      <a href="kontakt.html" class="mobile-cta">Probetraining buchen</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero reveal-up">
+      <h1 class="page-title">Nehmen Sie Kontakt auf</h1>
+      <p class="page-subtitle">Wir freuen uns darauf, Sie kennenzulernen und gemeinsam an Ihren Zielen zu arbeiten.</p>
+    </section>
+
+    <section class="contact-grid">
+      <div class="reveal-left">
+
+      <div class="contact-item-row">
+        <div class="contact-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="var(--color-primary)" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg></div>
+        <div>
+          <span
+            style="display:block; font-size:0.875rem; text-transform:uppercase; color:var(--color-text-tertiary); font-weight:600; margin-bottom:0.25rem;">Telefon</span>
+          <a href="tel:0763833318" style="font-size:1.5rem; font-weight:700; color:var(--color-primary);">076 383 33
+            18</a>
+        </div>
+      </div>
+
+      <div class="contact-item-row">
+        <div class="contact-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="var(--color-primary)" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg></div>
+        <div>
+          <span
+            style="display:block; font-size:0.875rem; text-transform:uppercase; color:var(--color-text-tertiary); font-weight:600; margin-bottom:0.25rem;">Öffnungszeiten</span>
+          <p style="font-size:1.125rem; font-weight:500;">Mo-Fr | 13-20 Uhr</p>
+          <p style="color:var(--color-text-secondary); margin-top:0.25rem;">Termine nach Vereinbarung auch nach 18 Uhr
+            und am Wochenende.</p>
+        </div>
+      </div>
+
+      <div class="contact-item-row">
+        <div class="contact-icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <span style="display:block; font-size:0.875rem; text-transform:uppercase; color:var(--color-text-tertiary); font-weight:600; margin-bottom:0.25rem;">Adresse & Wegbeschreibung</span>
+          <p style="font-size:1.125rem; font-weight:500;">Rychenbergstrasse 67</p>
+          <p style="color:var(--color-text-secondary); margin-top:0.25rem; line-height: 1.6;">Das Studio befindet sich im ehemaligen Gebäude <strong>Brauerei 67</strong> im 1. Stock (gelbes Gebäude).</p>
+          
+          <div style="margin-top: 1rem;">
+            <p style="font-weight: 600; font-size: 0.875rem; color: var(--color-text-primary);">Zugang (von beiden Seiten):</p>
+            <ul style="list-style: disc; margin-left: 1.25rem; color: var(--color-text-secondary); font-size: 0.875rem; margin-top: 0.25rem; line-height: 1.6;">
+              <li><strong>Von Osten (Parkhaus Seite):</strong> 2 Eingänge mit Klingeln (einer im Parterre, der zweite im 1. Stock).</li>
+              <li><strong>Von Westen:</strong> 1 Eingang im 1. Stock (ohne Klingel).</li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 1rem;">
+            <p style="font-weight: 600; font-size: 0.875rem; color: var(--color-text-primary);">Parkplätze:</p>
+            <ul style="list-style: disc; margin-left: 1.25rem; color: var(--color-text-secondary); font-size: 0.875rem; margin-top: 0.25rem; line-height: 1.6;">
+              <li>Besucherparkplätze befinden sich nach dem Kreisel rechts im Parkhaus.</li>
+              <li>Parkplätze sind gekennzeichnet mit <strong>Brauerei / Besucher</strong>.</li>
+              <li>Maximale Parkzeit: <strong>3 Stunden</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-right delay-200">
+      <div class="form-box">
+        <h3 style="font-size:1.25rem; font-family:var(--font-display); margin-bottom:1.5rem;">Nachricht senden</h3>
+        <form onsubmit="event.preventDefault();">
+          <label class="form-label">Name</label>
+          <input type="text" class="input-field" placeholder="Ihr Name">
+          <label class="form-label">Email</label>
+          <input type="email" class="input-field" placeholder="ihre.email@beispiel.ch">
+          <label class="form-label">Nachricht</label>
+          <textarea class="input-field" rows="4" placeholder="Wie können wir Ihnen helfen?"
+            style="resize:none;"></textarea>
+          <button type="submit" class="btn-primary" style="width:100%;">Senden</button>
+        </form>
+      </div>
+      <div class="map-box" style="overflow: hidden;">
+        <iframe src="https://www.google.com/maps?cid=722555101870919209&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAEYASAB&hl=en-AT&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">
+          <span class="logo-title">Perfect Forms</span>
+          <span class="logo-subtitle">Studio Winterthur</span>
+        </div>
+        <p style="color: var(--color-text-secondary); font-size: 0.875rem; margin-top: 1rem; line-height: 1.6;">
+          Ihr Partner für Figurmodellierung, Gesundheit und Wohlbefinden in Winterthur.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Links</h3>
+        <div class="footer-links">
+          <a href="index.html">Startseite</a>
+          <a href="preise.html">Anmeldung & Preise</a>
+          <a href="sun400xl.html">Das SUN 400 XL</a>
+          <a href="das-studio.html">Das Studio</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer-title">Kontakt</h3>
+        <div class="footer-contact">
+          <a href="tel:0763833318" class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>076 383 33 18</span>
+          </a>
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <div>
+              <p>Mo-Fr | 13-20 Uhr</p>
+              <p style="color: var(--color-text-tertiary); font-size: 0.75rem; margin-top: 0.25rem;">Termine nach
+                Vereinbarung auch nach 18 Uhr und am Wochenende.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      &copy; 2026 Perfect Forms Studio Winterthur. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+  <script>
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-scale-lg').forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
