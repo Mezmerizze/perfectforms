@@ -1,0 +1,14 @@
+{
+  "name": "perfect-forms-vanilla",
+  "private": true,
+  "homepage": "https://Mezmerizze.github.io/perfectforms",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve .",
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
