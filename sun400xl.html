@@ -224,7 +224,7 @@
   <script>
     document.getElementById('mobileMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.toggle('open'));
     const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-scale-lg').forEach(el => observer.observe(el));
+    window.addEventListener("scroll", () => { document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 20); }); document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-scale-lg').forEach(el => observer.observe(el));
   </script>
 </body>
 
