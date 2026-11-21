@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../utils/url';
+---
+
+<Layout
+  title="Preise & Anmeldung – Perfect Forms"
+  description="Preise für Probetraining, Einzeltraining und Abos im Perfect Forms Studio Winterthur. 10% Rabatt für Studenten und Senioren."
+  currentPath="/preise"
+>
+  <section class="page-hero reveal-stagger">
+    <span class="section-label">Abonnemente &amp; Tarife</span>
+    <h1 class="page-title">Preise &amp; Anmeldung</h1>
+    <p class="page-subtitle">Transparente Preise für Ihre Gesundheit – je mehr Trainings, desto mehr gratis.</p>
+  </section>
+
+  <section class="section" style="padding-top: 1rem;" aria-labelledby="abos">
+    <div class="container">
+      <h2 class="sr-only" id="abos">Abonnemente</h2>
+      <div class="pricing-grid reveal-stagger">
+        <div class="fit-price-col">
+          <div class="fit-price-top">
+            <div class="fit-price-header">
+              <h3 class="price-title">10er Abo</h3>
+            </div>
+            <div class="price-amount"><small>CHF</small>490</div>
+            <p class="price-desc">Für den Einstieg · CHF 440.- für Studenten &amp; Senioren</p>
+            <a href={withBase('/kontakt')} class="btn-outline btn-block" aria-label="10er Abo anfragen">10er Abo anfragen</a>
+          </div>
+          <div class="fit-price-features">
+            <div class="fit-price-features-label">Inklusive Leistungen:</div>
+            <ul class="fit-check-list">
+              <li class="highlight">+ 1 Training Gratis (11 Trainings total)</li>
+              <li>Gültigkeit 6 Monate</li>
+              <li>10% Studenten- &amp; Seniorenrabatt</li>
+              <li>Persönliche Betreuung im Studio</li>
+              <li>Nutzung von Relaxbereich &amp; Duschen</li>
+              <li>Probetraining Fr 30.- wird angerechnet</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fit-price-col fit-price-col--featured">
+          <div class="fit-price-top">
+            <div class="fit-price-header">
+              <h3 class="price-title">15er Abo</h3>
+              <span class="badge-bestseller">Empfohlen</span>
+            </div>
+            <div class="price-amount"><small>CHF</small>735</div>
+            <p class="price-desc">Der Bestseller · CHF 660.- für Studenten &amp; Senioren</p>
+            <a href={withBase('/kontakt')} class="btn-primary btn-block" aria-label="15er Abo anfragen">15er Abo anfragen</a>
+          </div>
+          <div class="fit-price-features">
+            <div class="fit-price-features-label">Inklusive Leistungen:</div>
+            <ul class="fit-check-list">
+              <li class="highlight">+ 3 Trainings Gratis (18 Trainings total)</li>
+              <li>Gültigkeit 9 Monate</li>
+              <li>10% Studenten- &amp; Seniorenrabatt</li>
+              <li>Persönliche Betreuung im Studio</li>
+              <li>Nutzung von Relaxbereich &amp; Duschen</li>
+              <li>Probetraining Fr 30.- wird angerechnet</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="fit-price-col">
+          <div class="fit-price-top">
+            <div class="fit-price-header">
+              <h3 class="price-title">20er Abo</h3>
+            </div>
+            <div class="price-amount"><small>CHF</small>980</div>
+            <p class="price-desc">Maximaler Profit · CHF 880.- für Studenten &amp; Senioren</p>
+            <a href={withBase('/kontakt')} class="btn-outline btn-block" aria-label="20er Abo anfragen">20er Abo anfragen</a>
+          </div>
+          <div class="fit-price-features">
+            <div class="fit-price-features-label">Inklusive Leistungen:</div>
+            <ul class="fit-check-list">
+              <li class="highlight">+ 5 Trainings Gratis (25 Trainings total)</li>
+              <li>Gültigkeit 1 Jahr (12 Monate)</li>
+              <li>10% Studenten- &amp; Seniorenrabatt</li>
+              <li>Persönliche Betreuung im Studio</li>
+              <li>Nutzung von Relaxbereich &amp; Duschen</li>
+              <li>Probetraining Fr 30.- wird angerechnet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container pricing-page-grid">
+      <div class="stack reveal-stagger">
+        <div class="price-card-v">
+          <h2 class="card-title">Einzeltraining &amp; Probe</h2>
+          <dl>
+            <div class="price-row price-row--featured">
+              <dt>Probetraining <small>Rückerstattung bei Abo-Kauf (innert 10 Tagen)</small></dt>
+              <dd>CHF 30.-</dd>
+            </div>
+            <div class="price-row">
+              <dt>Einzeltraining</dt>
+              <dd>CHF 49.-</dd>
+            </div>
+            <div class="price-row">
+              <dt>Verlängerung (10 Min)</dt>
+              <dd>CHF 10.-</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="price-card-v2">
+          <h2 class="card-title card-title--row"><span class="pill-red">10%</span> Studenten &amp; Senioren</h2>
+          <p>Gültig für Studenten (bis 26 J.) und Senioren (ab 70 J.).</p>
+          <dl class="mini-prices">
+            <div>
+              <dt>Probetraining</dt>
+              <dd>CHF 27.-</dd>
+            </div>
+            <div>
+              <dt>Einzeltraining</dt>
+              <dd>CHF 44.-</dd>
+            </div>
+            <div>
+              <dt>Abo-Preise (10er / 15er / 20er)</dt>
+              <dd>CHF 440.- / 660.- / 880.-</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="price-card-dark on-green reveal-scale delay-200">
+        <h2 class="card-title" style="margin-bottom: 0;">Wichtige Informationen</h2>
+        <div>
+          <h3 class="eyebrow">Bitte mitbringen</h3>
+          <ul class="check-list">
+            <li>2 grosse Badetücher</li>
+            <li>Trainingsbekleidung (langärmlig, keine Baumwolle!)</li>
+            <li>2 Paar Socken</li>
+            <li>Duschsandalen &amp; Wasserflasche</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="eyebrow">Bezahlung</h3>
+          <p>Bar, Überweisung, Twint oder EC <br />Maestro, VISA | MasterCard</p>
+        </div>
+        <p class="fine-print">Nicht angetretene Termine werden verrechnet. Akzeptiert werden Abmeldungen oder
+          Terminänderungen bis 24 Std vor dem Termin.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-panel on-green reveal-scale">
+        <h2 class="cta-title">Bereit für Ihr Probetraining?</h2>
+        <p>Nur Fr 30.- (werden zurückerstattet nach Kauf von Abo innerhalb von 10 Tagen). Studenten Rabatt: 10%.</p>
+        <a href={withBase('/kontakt')} class="btn-primary btn-lg">Jetzt Termin vereinbaren</a>
+      </div>
+    </div>
+  </section>
+</Layout>

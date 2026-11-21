@@ -1,39 +1,27 @@
-# Perfect Forms Studio Winterthur 🚀
+# Perfect Forms Studio Winterthur (Astro)
 
-This is the finalized, high-performance **Vanilla HTML/CSS** version of the Perfect Forms website. All unnecessary React/TS/Vite overhead has been removed to ensure maximum speed and simple editing.
+Static **Astro** website for Perfect Forms Studio Winterthur with shared layout/navigation components, zero framework runtime bloat, and static build output ready for GitHub Pages or any static host.
 
-## 🛠 Project Structure
-- `index.html`: The main homepage.
-- `das-studio.html`, `sun400xl.html`, `preise.html`, `kontakt.html`: Individual sub-pages.
-- `style.css`: The central design and layout engine.
-- `script.js`: Shared behaviour for all pages (mobile menu, scroll reveals, contact form validation).
-- `Images/`: All optimized photographic and icon assets.
-- `DESIGN.md`: The official design system tokens (colors, fonts, radii).
+## Project Structure
+- `astro.config.mjs`: Astro configuration (`site`, `base`, static output).
+- `src/layouts/Layout.astro`: Shared HTML shell, Google Fonts (`Urbanist`), skip link, navbar, footer, and interactive client behaviors (diashow, goals carousel, parallax, form validation).
+- `src/components/Navbar.astro` & `Footer.astro`: Single source of truth for navigation and footer across all pages.
+- `src/pages/`: Clean file-based routes:
+  - `index.astro` (`/`)
+  - `preise.astro` (`/preise`)
+  - `sun400xl.astro` (`/sun400xl`)
+  - `das-studio.astro` (`/das-studio`)
+  - `kontakt.astro` (`/kontakt`)
+  - `impressum.astro` (`/impressum`)
+  - `datenschutz.astro` (`/datenschutz`)
+- `src/styles/global.css`: Central design system & layout styles.
+- `src/utils/url.ts`: `withBase()` helper so all internal routes, images, and PDFs work cleanly under `/perfectforms` or `/`.
+- `public/Images/` & `public/docs/`: Static photographs and downloadable PDF brochures.
 
-## 💻 Local Real-Time Editing
-To edit the website and see changes instantly on your Mac:
-1. Open any of the `.html` or `.css` files in your text editor.
-2. To preview locally, run:
-   ```bash
-   npm start
-   ```
-   (This runs a mini-server at `http://localhost:5000`)
-
-## 🌐 How to Update the Live Website
-Once you're happy with your local changes, push them to your GitHub:
-1. Run:
-   ```bash
-   git add .
-   git commit -m "Describe your update"
-   git push origin main
-   ```
-2. (Optional) To force-deploy a new version to GitHub Pages:
-   ```bash
-   npm run deploy
-   ```
-
-## 🎨 Design System
-All colors, spacing, and component rules are strictly defined in [DESIGN.md](./DESIGN.md). Always follow these tokens for consistency.
-
-## V2 (conversion experiment)
-`v2/` is a separate copy with conversion-focused changes (sticky mobile call bar, booking-style form, first-visit steps, price per training). The main site in the project root is untouched. Preview: http://localhost:3000/v2/
+## Local Development
+```bash
+npm run dev      # Start Astro dev server at http://localhost:4321/perfectforms/
+npm run build    # Build static site into dist/
+npm run preview  # Preview production dist/ build locally
+npm run deploy   # Build and publish dist/ to the gh-pages branch
+```

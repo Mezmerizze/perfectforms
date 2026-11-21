@@ -1,0 +1,334 @@
+---
+import 'lenis/dist/lenis.css';
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  currentPath?: string;
+}
+
+const { title, description, currentPath = '/' } = Astro.props;
+const isHome = (currentPath.replace(/\/$/, '') || '/') === '/';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#F5F7F6" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+    <Navbar currentPath={currentPath} />
+
+    <main id="main" class={isHome ? 'main--home' : 'main--subpage'}>
+      <slot />
+    </main>
+
+    <Footer currentPath={currentPath} />
+
+    <script>
+      import Lenis from 'lenis';
+
+      // Trigger homepage hero roll-out entrance cleanly after initial paint
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('hero-loaded');
+      } else {
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            document.documentElement.classList.add('hero-loaded');
+          });
+        });
+      }
+
+      // Lenis smooth scroll (automatically respects prefers-reduced-motion)
+      const lenis = new Lenis({
+        autoRaf: true,
+        lerp: 0.1,
+        smoothWheel: true,
+        anchors: { offset: -92 },
+        respectReducedMotion: true,
+      });
+
+      // Navbar morph: transparent over hero -> floating frosted pill -> hide on scroll down -> show pill on scroll up -> transparent at top
+      const navbar = document.querySelector<HTMLElement>('.navbar');
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const menu = document.getElementById('mobileMenu');
+      let lastScrollY = window.scrollY;
+      const PILL_THRESHOLD = 40;
+      const HIDE_THRESHOLD = 240;
+
+      const onScroll = () => {
+        if (!navbar) return;
+        const y = window.scrollY;
+        const delta = y - lastScrollY;
+        const menuOpen = menu?.classList.contains('open');
+
+        if (y <= PILL_THRESHOLD) {
+          navbar.classList.remove('scrolled', 'is-hidden');
+        } else {
+          navbar.classList.add('scrolled');
+          if (!menuOpen && y > HIDE_THRESHOLD && delta > 4) {
+            navbar.classList.add('is-hidden');
+          } else if (delta < -4) {
+            navbar.classList.remove('is-hidden');
+          }
+        }
+        lastScrollY = y;
+      };
+
+      lenis.on('scroll', onScroll);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Mobile menu
+
+      if (menuBtn && menu && navbar) {
+        const setOpen = (open: boolean) => {
+          menu.classList.toggle('open', open);
+          menuBtn.setAttribute('aria-expanded', String(open));
+          menuBtn.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
+        };
+
+        menuBtn.addEventListener('click', () => setOpen(!menu.classList.contains('open')));
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && menu.classList.contains('open')) {
+            setOpen(false);
+            menuBtn.focus();
+          }
+        });
+
+        document.addEventListener('click', (e) => {
+          if (menu.classList.contains('open') && !navbar.contains(e.target as Node)) setOpen(false);
+        });
+
+        window.matchMedia('(min-width: 1024px)').addEventListener('change', () => setOpen(false));
+      }
+
+      // Scroll reveals (single elements, media curtains & automatic child staggers)
+      const staggerContainers = document.querySelectorAll<HTMLElement>('.reveal-stagger');
+      staggerContainers.forEach((container) => {
+        Array.from(container.children).forEach((child, index) => {
+          (child as HTMLElement).style.setProperty('--stagger-index', String(Math.min(index, 8)));
+        });
+      });
+
+      const revealEls = document.querySelectorAll<HTMLElement>(
+        '.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-scale-lg, .reveal-media, .reveal-line, .reveal-stagger'
+      );
+
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const target = entry.target as HTMLElement;
+                target.classList.add('visible');
+                observer.unobserve(target);
+                window.setTimeout(() => target.classList.add('reveal-done'), 1400);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: '0px 0px -6% 0px' }
+        );
+        revealEls.forEach((el) => observer.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add('visible', 'reveal-done'));
+      }
+
+      // Subtle Lenis-synced micro-parallax for editorial images
+      const parallaxFrames = Array.from(document.querySelectorAll<HTMLElement>('[data-parallax]'));
+      if (parallaxFrames.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let parallaxTicking = false;
+
+        const updateParallax = () => {
+          const viewH = window.innerHeight || 1;
+          parallaxFrames.forEach((frame) => {
+            const img = frame.querySelector<HTMLImageElement>('img');
+            if (!img) return;
+            const rect = frame.getBoundingClientRect();
+            if (rect.bottom < -60 || rect.top > viewH + 60) return;
+            // Progress from -1 (entering bottom) to +1 (exiting top)
+            const centerOffset = (rect.top + rect.height / 2 - viewH / 2) / (viewH / 2);
+            const clamped = Math.max(-1, Math.min(1, centerOffset));
+            const shift = clamped * -18;
+            if (frame.classList.contains('visible') || !frame.classList.contains('reveal-media')) {
+              img.style.transform = `scale(1.09) translate3d(0, ${shift.toFixed(2)}px, 0)`;
+            }
+          });
+          parallaxTicking = false;
+        };
+
+        const onParallaxScroll = () => {
+          if (!parallaxTicking) {
+            window.requestAnimationFrame(updateParallax);
+            parallaxTicking = true;
+          }
+        };
+
+        lenis.on('scroll', onParallaxScroll);
+        window.addEventListener('scroll', onParallaxScroll, { passive: true });
+        window.addEventListener('resize', onParallaxScroll, { passive: true });
+        updateParallax();
+      }
+
+      // Goals 3-Card Carousel cycling
+      const goalsTrack = document.getElementById('goalsTrack');
+      const goalsPrev = document.getElementById('goalsPrev');
+      const goalsNext = document.getElementById('goalsNext');
+
+      if (goalsTrack && goalsPrev && goalsNext) {
+        const cards = Array.from(goalsTrack.querySelectorAll<HTMLElement>('.goal-card'));
+        let startIdx = 0;
+
+        const renderGoals = () => {
+          const visibleCount = 3;
+          cards.forEach((card) => {
+            card.hidden = true;
+            card.classList.add('visible');
+          });
+          for (let i = 0; i < Math.min(visibleCount, cards.length); i++) {
+            const idx = (startIdx + i) % cards.length;
+            cards[idx].hidden = false;
+            goalsTrack.appendChild(cards[idx]);
+          }
+        };
+
+        goalsNext.addEventListener('click', () => {
+          startIdx = (startIdx + 1) % cards.length;
+          renderGoals();
+        });
+
+        goalsPrev.addEventListener('click', () => {
+          startIdx = (startIdx - 1 + cards.length) % cards.length;
+          renderGoals();
+        });
+      }
+
+      // Hero background parallax synced with Lenis
+      const heroCard = document.querySelector<HTMLElement>('.hero-card');
+      const heroParallaxImg = document.getElementById('heroParallaxImg') as HTMLImageElement | null;
+
+      if (heroCard && heroParallaxImg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let heroTicking = false;
+
+        const updateHeroParallax = () => {
+          const rect = heroCard.getBoundingClientRect();
+          const viewH = window.innerHeight || 1;
+          if (rect.bottom > -80 && rect.top < viewH + 80) {
+            const progress = Math.min(Math.max(-rect.top / Math.max(rect.height, 1), -0.2), 1.2);
+            const shiftY = progress * rect.height * 0.14;
+            heroParallaxImg.style.transform = `translate3d(0, ${shiftY.toFixed(2)}px, 0) scale(1.03)`;
+          }
+          heroTicking = false;
+        };
+
+        const onHeroParallax = () => {
+          if (!heroTicking) {
+            window.requestAnimationFrame(updateHeroParallax);
+            heroTicking = true;
+          }
+        };
+
+        lenis.on('scroll', onHeroParallax);
+        window.addEventListener('scroll', onHeroParallax, { passive: true });
+        window.addEventListener('resize', onHeroParallax, { passive: true });
+        updateHeroParallax();
+      }
+
+      // Editorial Auto-Playing Studio Showcase with Clickable Thumbnail Strip
+      const studioShowcase = document.getElementById('studioShowcase');
+
+      if (studioShowcase) {
+        const imgs = Array.from(studioShowcase.querySelectorAll('.studio-showcase-img'));
+        const captions = Array.from(studioShowcase.querySelectorAll('.studio-showcase-caption'));
+        const thumbs = Array.from(studioShowcase.querySelectorAll<HTMLButtonElement>('.studio-thumb'));
+        const total = imgs.length;
+        const INTERVAL_MS = 5500;
+        let currentIdx = 0;
+        let timerId: number | undefined;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const showSlide = (idx: number) => {
+          currentIdx = (idx + total) % total;
+          imgs.forEach((el, i) => el.classList.toggle('active', i === currentIdx));
+          captions.forEach((el, i) => el.classList.toggle('active', i === currentIdx));
+          thumbs.forEach((btn, i) => {
+            const isActive = i === currentIdx;
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', String(isActive));
+            if (isActive) {
+              // Reflow to restart the CSS progress bar animation cleanly
+              void btn.offsetWidth;
+              btn.classList.add('active');
+            }
+          });
+        };
+
+        const startAutoPlay = () => {
+          if (prefersReduced || total < 2) return;
+          window.clearInterval(timerId);
+          timerId = window.setInterval(() => showSlide(currentIdx + 1), INTERVAL_MS);
+        };
+
+        thumbs.forEach((btn, i) => {
+          btn.addEventListener('click', () => {
+            showSlide(i);
+            startAutoPlay();
+          });
+        });
+
+        startAutoPlay();
+      }
+
+      // Contact form validation
+      const form = document.getElementById('contactForm');
+      if (form) {
+        const fields = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>('.input-field[required]');
+        const status = document.getElementById('formStatus');
+
+        const validate = (field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement) => {
+          const ok = field.checkValidity();
+          field.setAttribute('aria-invalid', String(!ok));
+          return ok;
+        };
+
+        fields.forEach((field) => {
+          field.addEventListener('blur', () => validate(field));
+          field.addEventListener('input', () => {
+            if (field.getAttribute('aria-invalid') === 'true') validate(field);
+          });
+        });
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const invalid = [...fields].filter((field) => !validate(field));
+          if (invalid.length) {
+            if (status) status.hidden = true;
+            invalid[0].focus();
+            return;
+          }
+          if (status) status.hidden = false;
+        });
+      }
+    </script>
+  </body>
+</html>
