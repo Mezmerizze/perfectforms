@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Perfect Forms</title>
+  <meta name="description" content="Perfect Forms Studio, Rychenbergstrasse 67, Winterthur. Telefon 076 383 33 18. Mo-Fr 13-20 Uhr, Termine nach Vereinbarung.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#F6F4EF">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&family=Playfair+Display:ital@1&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Zum Inhalt springen</a>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Perfect Forms Studio Winterthur – Startseite">
+        <span class="logo-title">Perfect Forms</span>
+        <span class="logo-subtitle">Studio Winterthur</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="index.html">Startseite</a>
+        <a href="preise.html">Anmeldung &amp; Preise</a>
+        <a href="sun400xl.html">Das SUN 400 XL</a>
+        <a href="das-studio.html">Das Studio</a>
+        <a href="kontakt.html" aria-current="page">Kontakt</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="kontakt.html#anfrage" class="btn-primary">Probetraining buchen</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false"
+        aria-controls="mobileMenu">
+        <svg class="icon-menu" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg class="icon-close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+      <a href="index.html">Startseite</a>
+      <a href="preise.html">Anmeldung &amp; Preise</a>
+      <a href="sun400xl.html">Das SUN 400 XL</a>
+      <a href="das-studio.html">Das Studio</a>
+      <a href="kontakt.html" aria-current="page">Kontakt</a>
+      <a href="kontakt.html#anfrage" class="btn-primary">Probetraining buchen</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero reveal-up">
+      <h1 class="page-title">Nehmen Sie Kontakt auf</h1>
+      <p class="page-subtitle">Wir freuen uns darauf, Sie kennenzulernen und gemeinsam an Ihren Zielen zu arbeiten.</p>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container contact-grid">
+        <div class="reveal-left">
+          <div class="contact-item-row">
+            <div class="contact-icon-box"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg></div>
+            <div>
+              <h2>Telefon</h2>
+              <a href="tel:+41763833318" class="contact-phone">076 383 33 18</a>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-icon-box"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg></div>
+            <div>
+              <h2>Öffnungszeiten</h2>
+              <p class="contact-main">Mo-Fr | 13-20 Uhr</p>
+              <p class="open-badge" id="openBadge" hidden></p>
+              <p>Termine nach Vereinbarung auch nach 18 Uhr und am Wochenende.</p>
+            </div>
+          </div>
+
+          <div class="contact-item-row">
+            <div class="contact-icon-box"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg></div>
+            <div>
+              <h2>Adresse &amp; Wegbeschreibung</h2>
+              <p class="contact-main">Rychenbergstrasse 67</p>
+              <p>Das Studio befindet sich im ehemaligen Gebäude <strong>Brauerei 67</strong> im 1. Stock (gelbes
+                Gebäude).</p>
+
+              <details class="directions">
+                <summary>Anfahrt, Zugang &amp; Parkplätze</summary>
+              <div class="contact-sub">
+                <h3>Zugang (von beiden Seiten):</h3>
+                <ul>
+                  <li><strong>Von Osten (Parkhaus Seite):</strong> 2 Eingänge mit Klingeln (einer im Parterre, der
+                    zweite im 1. Stock).</li>
+                  <li><strong>Von Westen:</strong> 1 Eingang im 1. Stock (ohne Klingel).</li>
+                </ul>
+              </div>
+
+              <div class="contact-sub">
+                <h3>Parkplätze:</h3>
+                <ul>
+                  <li>Besucherparkplätze befinden sich nach dem Kreisel rechts im Parkhaus.</li>
+                  <li>Parkplätze sind gekennzeichnet mit <strong>Brauerei / Besucher</strong>.</li>
+                  <li>Maximale Parkzeit: <strong>3 Stunden</strong>.</li>
+                </ul>
+              </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-right delay-200">
+          <div class="form-box" id="anfrage">
+            <h2>Probetraining anfragen</h2>
+            <p>Wir melden uns so schnell wie möglich bei Ihnen. Felder mit <span class="text-primary">*</span> sind Pflichtfelder.</p>
+            <form id="contactForm" novalidate data-endpoint="">
+              <div class="field">
+                <label class="form-label" for="anliegen">Ihr Anliegen</label>
+                <select id="anliegen" name="anliegen" class="input-field">
+                  <option value="probetraining">Probetraining (Fr 30.-)</option>
+                  <option value="10er-abo">10er Abo (CHF 490)</option>
+                  <option value="15er-abo">15er Abo (CHF 735)</option>
+                  <option value="20er-abo">20er Abo (CHF 980)</option>
+                  <option value="frage">Allgemeine Frage</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="form-label" for="name">Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" class="input-field" autocomplete="name" required
+                  aria-describedby="name-error">
+                <p class="field-error" id="name-error">Bitte geben Sie Ihren Namen ein.</p>
+              </div>
+              <div class="field">
+                <label class="form-label" for="phone">Telefon <span aria-hidden="true">*</span></label>
+                <input type="tel" id="phone" name="phone" class="input-field" autocomplete="tel" inputmode="tel"
+                  placeholder="076 123 45 67" required pattern="[0-9+()\-\s]{7,}" aria-describedby="phone-hint phone-error">
+                <p class="field-hint" id="phone-hint">So können wir Ihnen direkt einen Termin vorschlagen.</p>
+                <p class="field-error" id="phone-error">Bitte geben Sie eine gültige Telefonnummer ein.</p>
+              </div>
+              <div class="field">
+                <label class="form-label" for="zeit">Wann passt es Ihnen am besten?</label>
+                <select id="zeit" name="zeit" class="input-field">
+                  <option value="flexibel">Flexibel</option>
+                  <option value="wochentags-nachmittags">Wochentags nachmittags (13–17 Uhr)</option>
+                  <option value="wochentags-abends">Wochentags abends (17–20 Uhr)</option>
+                  <option value="wochenende">Wochenende</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="form-label" for="email">E-Mail (optional)</label>
+                <input type="email" id="email" name="email" class="input-field" autocomplete="email"
+                  placeholder="ihre.email@beispiel.ch" aria-describedby="email-error">
+                <p class="field-error" id="email-error">Bitte geben Sie eine gültige E-Mail-Adresse ein, z.B. name@beispiel.ch.</p>
+              </div>
+              <div class="field">
+                <label class="form-label" for="message">Nachricht (optional)</label>
+                <textarea id="message" name="message" class="input-field" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-block btn-lg" id="submitBtn">Anfrage senden</button>
+              <p class="form-status" id="formStatus" role="alert" hidden>Der Online-Versand ist im Moment leider nicht
+                verfügbar. Bitte rufen Sie uns an: <a href="tel:+41763833318">076 383 33 18</a>.</p>
+            </form>
+            <div class="form-success" id="formSuccess" role="status" tabindex="-1" hidden>
+              <strong>Vielen Dank!</strong>
+              <p>Ihre Anfrage ist bei uns eingegangen. Wir melden uns so schnell wie möglich telefonisch bei Ihnen.</p>
+            </div>
+          </div>
+          <div class="map-box" id="mapBox"
+            data-src="https://www.google.com/maps?cid=722555101870919209&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAEYASAB&hl=de&output=embed">
+            <div class="map-placeholder">
+              <p><strong>Rychenbergstrasse 67</strong><br>Brauerei 67, Winterthur</p>
+              <div class="map-actions">
+                <a class="btn-outline" target="_blank" rel="noopener"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Rychenbergstrasse+67%2C+Winterthur">Route planen</a>
+                <button type="button" class="btn-outline" id="mapLoad">Karte anzeigen</button>
+              </div>
+              <small>Beim Anzeigen der Karte werden Daten an Google übertragen.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <h2 class="section-title">Kurz beantwortet</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" name="kfaq">
+            <summary>
+              <span>Was muss ich mitbringen?</span>
+              <span class="faq-icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg></span>
+            </summary>
+            <div class="faq-answer-inner">2 grosse Badetücher, langärmlige Trainingsbekleidung (keine Baumwolle), 2 Paar Socken, Duschsandalen und eine Wasserflasche.</div>
+          </details>
+          <details class="faq-item" name="kfaq">
+            <summary>
+              <span>Kann ich einen Termin verschieben oder absagen?</span>
+              <span class="faq-icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg></span>
+            </summary>
+            <div class="faq-answer-inner">Abmeldungen und Terminänderungen sind bis 24 Stunden vor dem Termin möglich. Nicht angetretene Termine werden verrechnet.</div>
+          </details>
+          <details class="faq-item" name="kfaq">
+            <summary>
+              <span>Wie lange dauert ein Training?</span>
+              <span class="faq-icon"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="M12 5v14" /></svg></span>
+            </summary>
+            <div class="faq-answer-inner">Ein Training am SUN 400 XL dauert 30 Minuten. Dazu kommen Duschen und Zeit in der Relax-Zone. Bei Bedarf ist eine Verlängerung um 10 Minuten möglich (CHF 10.-).</div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo">
+          <span class="logo-title">Perfect Forms</span>
+          <span class="logo-subtitle">Studio Winterthur</span>
+        </div>
+        <p class="footer-about">Ihr Partner für Figurmodellierung, Gesundheit und Wohlbefinden in Winterthur.</p>
+      </div>
+
+      <nav aria-label="Footer">
+        <h2 class="footer-title">Links</h2>
+        <div class="footer-links">
+          <a href="index.html">Startseite</a>
+          <a href="preise.html">Anmeldung &amp; Preise</a>
+          <a href="sun400xl.html">Das SUN 400 XL</a>
+          <a href="das-studio.html">Das Studio</a>
+          <a href="kontakt.html">Kontakt</a>
+        </div>
+      </nav>
+
+      <div>
+        <h2 class="footer-title">Kontakt</h2>
+        <div class="footer-contact">
+          <a href="tel:+41763833318" class="contact-item">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+            <span>076 383 33 18</span>
+          </a>
+          <a href="kontakt.html" class="contact-item">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+            <span>Rychenbergstrasse 67, Winterthur</span>
+          </a>
+          <div class="contact-item">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+            <div>
+              <p>Mo-Fr | 13-20 Uhr</p>
+              <small>Termine nach Vereinbarung auch nach 18 Uhr und am Wochenende.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      &copy; 2026 Perfect Forms Studio Winterthur. Alle Rechte vorbehalten.
+    </div>
+  </footer>
+
+  <div class="mobile-bar" role="region" aria-label="Schnellkontakt">
+    <a href="tel:+41763833318" class="btn-outline"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg> Anrufen</a>
+    <a href="kontakt.html#anfrage" class="btn-primary">Probetraining buchen</a>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>
