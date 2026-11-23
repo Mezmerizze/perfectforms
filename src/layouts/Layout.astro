@@ -190,13 +190,14 @@ const isHome = (currentPath.replace(/\/$/, '') || '/') === '/';
         updateParallax();
       }
 
-      // Goals 3-Card Carousel cycling
+      // Goals Carousel: horizontal touch swiper on mobile (< 768px), 3-card cycling on desktop
       const goalsTrack = document.getElementById('goalsTrack');
       const goalsPrev = document.getElementById('goalsPrev');
       const goalsNext = document.getElementById('goalsNext');
 
       if (goalsTrack && goalsPrev && goalsNext) {
         const cards = Array.from(goalsTrack.querySelectorAll<HTMLElement>('.goal-card'));
+        const isMobileSwiper = () => window.matchMedia('(max-width: 767px)').matches;
         let startIdx = 0;
 
         const renderGoals = () => {
@@ -212,12 +213,26 @@ const isHome = (currentPath.replace(/\/$/, '') || '/') === '/';
           }
         };
 
+        const swipeMobile = (dir: number) => {
+          const firstCard = goalsTrack.querySelector<HTMLElement>('.goal-card');
+          const step = firstCard ? firstCard.offsetWidth + 16 : goalsTrack.clientWidth * 0.85;
+          goalsTrack.scrollBy({ left: dir * step, behavior: 'smooth' });
+        };
+
         goalsNext.addEventListener('click', () => {
+          if (isMobileSwiper()) {
+            swipeMobile(1);
+            return;
+          }
           startIdx = (startIdx + 1) % cards.length;
           renderGoals();
         });
 
         goalsPrev.addEventListener('click', () => {
+          if (isMobileSwiper()) {
+            swipeMobile(-1);
+            return;
+          }
           startIdx = (startIdx - 1 + cards.length) % cards.length;
           renderGoals();
         });
@@ -297,6 +312,87 @@ const isHome = (currentPath.replace(/\/$/, '') || '/') === '/';
         });
 
         startAutoPlay();
+      }
+
+      // Grab-able Infinite Marquee Swiper on Das Studio page
+      const studioMarquee = document.getElementById('studioMarquee');
+      const studioMarqueeTrack = document.getElementById('studioMarqueeTrack');
+
+      if (studioMarquee && studioMarqueeTrack) {
+        const originals = Array.from(studioMarqueeTrack.children);
+        originals.forEach((node) => {
+          const clone = node.cloneNode(true) as HTMLElement;
+          clone.setAttribute('aria-hidden', 'true');
+          studioMarqueeTrack.appendChild(clone);
+        });
+
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const BASE_SPEED = prefersReduced ? 0 : 0.55;
+        let offset = 0;
+        let velocity = 0;
+        let isDragging = false;
+        let lastX = 0;
+        let loopWidth = 0;
+
+        const measure = () => {
+          const gap = parseFloat(getComputedStyle(studioMarqueeTrack).columnGap || getComputedStyle(studioMarqueeTrack).gap) || 0;
+          loopWidth = (studioMarqueeTrack.scrollWidth + gap) / 2;
+        };
+
+        const wrapOffset = () => {
+          if (loopWidth <= 0) return;
+          while (offset <= -loopWidth) offset += loopWidth;
+          while (offset > 0) offset -= loopWidth;
+        };
+
+        const tick = () => {
+          if (!isDragging) {
+            if (Math.abs(velocity) > 0.08) {
+              offset += velocity;
+              velocity *= 0.94;
+            } else {
+              velocity = 0;
+              offset -= BASE_SPEED;
+            }
+            wrapOffset();
+            studioMarqueeTrack.style.transform = `translate3d(${offset.toFixed(2)}px, 0, 0)`;
+          }
+          window.requestAnimationFrame(tick);
+        };
+
+        studioMarquee.addEventListener('pointerdown', (e) => {
+          isDragging = true;
+          lastX = e.clientX;
+          velocity = 0;
+          studioMarquee.classList.add('is-dragging');
+          studioMarquee.setPointerCapture(e.pointerId);
+        });
+
+        studioMarquee.addEventListener('pointermove', (e) => {
+          if (!isDragging) return;
+          const dx = e.clientX - lastX;
+          lastX = e.clientX;
+          offset += dx;
+          velocity = dx;
+          wrapOffset();
+          studioMarqueeTrack.style.transform = `translate3d(${offset.toFixed(2)}px, 0, 0)`;
+        });
+
+        const endDrag = (e: PointerEvent) => {
+          if (!isDragging) return;
+          isDragging = false;
+          studioMarquee.classList.remove('is-dragging');
+          if (studioMarquee.hasPointerCapture(e.pointerId)) {
+            studioMarquee.releasePointerCapture(e.pointerId);
+          }
+        };
+
+        studioMarquee.addEventListener('pointerup', endDrag);
+        studioMarquee.addEventListener('pointercancel', endDrag);
+        window.addEventListener('resize', measure, { passive: true });
+
+        measure();
+        window.requestAnimationFrame(tick);
       }
 
       // Contact form validation

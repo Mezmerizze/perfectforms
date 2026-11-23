@@ -42,41 +42,85 @@ import { withBase } from '../utils/url';
     </div>
   </section>
 
-  <section class="section">
+  <section class="section studio-carousel-section">
     <div class="container">
       <div class="section-head reveal-stagger">
         <span class="section-label">Galerie</span>
         <h2 class="section-title">Impressionen</h2>
       </div>
-      <div class="studio-gallery">
-        <figure class="gallery-img large-gallery-img reveal-media">
-          <div class="gallery-photo" data-parallax><img src={withBase('/Images/studio-panorama-hq.webp')} alt="Entspannte Atmosphäre im Studio" width="1800" height="788" /></div>
-          <figcaption>Bei uns ist die Stimmung so entspannt, dass die Zeit beim Training einfach verfliegt.</figcaption>
-        </figure>
-        <figure class="gallery-img reveal-up">
-          <div class="gallery-photo"><img src={withBase('/Images/1.jpg')} alt="Umkleideraum mit Spinden" width="249" height="168" loading="lazy" /></div>
-          <figcaption>Sichere, verschliessbare Spinde für Ihre Wertsachen.</figcaption>
-        </figure>
-        <figure class="gallery-img reveal-up delay-100">
-          <div class="gallery-photo"><img src={withBase('/Images/2.jpg')} alt="Wartebereich für Begleitpersonen" width="296" height="165" loading="lazy" /></div>
-          <figcaption>Entspannter Wartebereich für Begleitpersonen.</figcaption>
-        </figure>
-        <figure class="gallery-img reveal-up delay-200">
-          <div class="gallery-photo"><img src={withBase('/Images/3.jpg')} alt="Großzügiger Ruhebereich" width="320" height="152" loading="lazy" /></div>
-          <figcaption>Unser grosszügiger Ruhebereich mit bequemen Liegen, frischen Pflanzen und stilvoller Deko ist der ideale Ort, um nach dem Workout runterzufahren und neue Kraft zu tanken.</figcaption>
-        </figure>
-        <figure class="gallery-img reveal-up">
-          <div class="gallery-photo"><img src={withBase('/Images/4.jpg')} alt="Training am SUN 400XL" width="320" height="159" loading="lazy" /></div>
-          <figcaption>Beim Training auf dem SUN 400XL können Sie sich entspannende Videos ansehen. So vergehen die 30 Minuten wie im Flug.</figcaption>
-        </figure>
-        <figure class="gallery-img reveal-up delay-100">
-          <div class="gallery-photo"><img src={withBase('/Images/5.jpg')} alt="Schminktisch und Spiegel" width="312" height="158" loading="lazy" /></div>
-          <figcaption>Nach der Dusche warten Föhn und Spiegel auf Sie. So starten Sie wieder frisch in den restlichen Tag.</figcaption>
-        </figure>
-        <figure class="gallery-img reveal-up delay-200">
-          <div class="gallery-photo"><img src={withBase('/Images/6.jpg')} alt="Relaxliegen zur Regeneration" width="320" height="154" loading="lazy" /></div>
-          <figcaption>Der perfekte Ort, um nach dem Training runterzufahren und in Ruhe zu regenerieren.</figcaption>
-        </figure>
+    </div>
+
+    <div class="studio-marquee-wrap reveal-up" id="studioMarquee" role="region" aria-label="Studio Impressionen Galerie" data-lenis-prevent-horizontal>
+      <div class="studio-marquee-track" id="studioMarqueeTrack">
+        <article class="studio-marquee-card">
+          <img src={withBase('/Images/studio-panorama-hq.webp')} alt="Entspannte Atmosphäre im Studio" width="1800" height="788" draggable="false" />
+          <div class="studio-carousel-scrim" aria-hidden="true"></div>
+          <span class="studio-carousel-pill">Übersicht &middot; Wohlfühloase</span>
+          <div class="studio-carousel-caption">
+            <h3>Willkommen im Studio</h3>
+            <p>Bei uns ist die Stimmung so entspannt, dass die Zeit beim Training einfach verfliegt.</p>
+          </div>
+        </article>
+
+        <article class="studio-marquee-card">
+          <img src={withBase('/Images/hero-slide-2.webp')} alt="Training am SUN 400 XL" width="1600" height="900" draggable="false" loading="lazy" />
+          <div class="studio-carousel-scrim" aria-hidden="true"></div>
+          <span class="studio-carousel-pill">30 Minuten &middot; Infrarot &amp; Bewegung</span>
+          <div class="studio-carousel-caption">
+            <h3>Training am SUN 400 XL</h3>
+            <p>Beim Training auf dem SUN 400 XL können Sie entspannende Videos ansehen – rückenschonend und effektiv.</p>
+          </div>
+        </article>
+
+        <article class="studio-marquee-card">
+          <img src={withBase('/Images/hero-slide-4.webp')} alt="Grosszügiger Ruhebereich im Studio" width="1600" height="900" draggable="false" loading="lazy" />
+          <div class="studio-carousel-scrim" aria-hidden="true"></div>
+          <span class="studio-carousel-pill">Regeneration &middot; Ruhezone</span>
+          <div class="studio-carousel-caption">
+            <h3>Grosszügiger Ruhebereich</h3>
+            <p>Bequeme Liegen, frische Pflanzen und stilvolle Deko – ideal, um nach dem Workout neue Kraft zu tanken.</p>
+          </div>
+        </article>
+
+        <article class="studio-marquee-card">
+          <img src={withBase('/Images/hero-slide-3.webp')} alt="Relaxliegen zur Regeneration" width="1600" height="900" draggable="false" loading="lazy" />
+          <div class="studio-carousel-scrim" aria-hidden="true"></div>
+          <span class="studio-carousel-pill">Nachschwitzen &middot; Tiefenentspannung</span>
+          <div class="studio-carousel-caption">
+            <h3>Relaxliegen</h3>
+            <p>Der perfekte Ort, um nach dem Training die Infrarotwärme in aller Ruhe nachwirken zu lassen.</p>
+          </div>
+        </article>
+
+        <article class="studio-marquee-card">
+          <img src={withBase('/Images/Schminktisch%20Spiegel.webp')} alt="Schminktisch und Spiegel" width="1600" height="900" draggable="false" loading="lazy" />
+          <div class="studio-carousel-scrim" aria-hidden="true"></div>
+          <span class="studio-carousel-pill">Beauty &amp; Styling &middot; Haarfön</span>
+          <div class="studio-carousel-caption">
+            <h3>Schminktisch &amp; Spiegel</h3>
+            <p>Nach der Dusche warten Haarfön und beleuchteter Spiegel auf Sie. So starten Sie wieder frisch in den Tag.</p>
+          </div>
+        </article>
+
+        <article class="studio-marquee-card">
+          <img src={withBase('/Images/Umkleide%20mit%20Spinden.webp')} alt="Umkleideraum mit Spinden" width="1600" height="1200" draggable="false" loading="lazy" />
+          <div class="studio-carousel-scrim" aria-hidden="true"></div>
+          <span class="studio-carousel-pill">Komfort &middot; Getrennte Duschen</span>
+          <div class="studio-carousel-caption">
+            <h3>Umkleide &amp; Spinde</h3>
+            <p>Sichere, abschliessbare Spinde für Ihre Wertsachen sowie getrennte Duschkabinen stehen jederzeit bereit.</p>
+          </div>
+        </article>
+
+        <article class="studio-marquee-card">
+          <img src={withBase('/Images/hero-slide-5.webp')} alt="Wartebereich für Begleitpersonen" width="1600" height="900" draggable="false" loading="lazy" />
+          <div class="studio-carousel-scrim" aria-hidden="true"></div>
+          <span class="studio-carousel-pill">Ankommen &middot; Begleitpersonen</span>
+          <div class="studio-carousel-caption">
+            <h3>Wartebereich &amp; Lounge</h3>
+            <p>Unsere gemütliche Lounge lädt zum entspannten Ankommen ein – auch Begleitpersonen fühlen sich rundum wohl.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
